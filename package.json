@@ -1,0 +1,29 @@
+{
+  "name": "clovers-reversi",
+  "version": "1.0.0",
+  "description": "Reversi game logic for use in clovers.network",
+  "main": "lib/reversi.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clovers-network/clovers-reversi.git"
+  },
+  "keywords": [
+    "reversi",
+    "othello",
+    "ethereum",
+    "clovers",
+    "clovers.network"
+  ],
+  "author": "Billy Rennekamp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clovers-network/clovers-reversi/issues"
+  },
+  "homepage": "https://github.com/clovers-network/clovers-reversi#readme",
+  "dependencies": {
+    "bignumber.js": "^6.0.0"
+  }
+}
