@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/clovers-network/clovers-reversi#readme",
   "dependencies": {
-    "bignumber.js": "^6.0.0"
+    "bn.js": "^4.11.8"
   }
 }
