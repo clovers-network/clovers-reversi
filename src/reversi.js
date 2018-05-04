@@ -22,6 +22,8 @@ class Reversi {
     this.XYSym = false
     this.XnYSym = false
     this.currentPlayer = this.BLACK
+    this.blackScore = 0
+    this.whiteScore = 0
     // this.board is an array of columns, visually the board should be arranged by arrays of rows
     this.board = new Array(this.BOARDDIM).fill(0).map(c => new Array(this.BOARDDIM).fill(this.EMPTY))
     this.rowBoard = new Array(this.BOARDDIM).fill(0).map(c => new Array(this.BOARDDIM).fill(this.EMPTY))
@@ -193,6 +195,21 @@ class Reversi {
     }
   }
 
+  calcWinners () {
+    this.isComplete()
+    if (this.error) return new Error('Game not complete')
+    let w = 0
+    let b = 0
+    for (let i = 0; i < 64; i++) {
+      let row = Math.floor(i / 8)
+      let col = i % 8
+      w += this.board[col][row] === this.WHITE ? 1 : 0
+      b += this.board[col][row] === this.BLACK ? 1 : 0
+    }
+    this.whiteScore = w
+    this.blackScore = b
+  }
+
   isSymmetrical () {
     let RotSym = true
     let Y0Sym = true
@@ -272,6 +289,7 @@ class Reversi {
     }
     this.thisBoardToByteBoard()
     this.isComplete()
+    this.calcWinners()
     this.isSymmetrical()
   }
 
@@ -365,6 +383,7 @@ class Reversi {
     this.thisBoardToByteBoard()
     if (!this.error) {
       this.isComplete()
+      this.calcWinners()
       this.isSymmetrical()
     }
     return this
