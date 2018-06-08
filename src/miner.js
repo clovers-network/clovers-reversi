@@ -7,8 +7,9 @@ class Miner {
     this.totalGamesMined = 0
     this.allGamesMined = []
     this.totalCloversFound = 0
+    this.started = new Date()
     this.date = new Date()
-    this.lastTime = 0
+    this.lastTime = new Date()
     this.reversi = new Reversi()
     this.RotSym = 0
     this.Y0Sym = 0
@@ -23,12 +24,15 @@ class Miner {
   }
 
   mine() {
+    this.date = new Date()
     if (!this.stopMining) {
+
+      if (this.totalGamesMined%1000 == 0) console.log(this.totalGamesMined)
+      if (this.totalGamesMined%1000 == 0) console.log(this.date.getTime() - this.started.getTime())
+        
       this.tempGamesMined++
       this.totalGamesMined++
       this.reversi.mine()
-      if (this.totalGamesMined%1000 == 0) console.log(this.totalGamesMined)
-      if (this.totalGamesMined%1000 == 0) console.log(this.date.getTime())
       if(this.reversi.symmetrical) {
         if (this.reversi.RotSym) this.RotSym++
         if (this.reversi.Y0Sym) this.Y0Sym++
