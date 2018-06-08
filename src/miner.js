@@ -19,52 +19,53 @@ class Miner {
   }
 
   startMining() {
-    setTimeout(() => {
-      this.mine}, 0)
+    this.mine().then(this.startMining.bind(this))
   }
 
   mine() {
-    this.date = new Date()
-    if (!this.stopMining) {
+    return new Promise((resolve, reject) => {
+      this.date = new Date()
+      if (!this.stopMining) {
 
-      if (this.totalGamesMined%1000 == 0) console.log('avg:' + (this.date.getTime() - this.started.getTime()) / (this.totalGamesMined / 1000))
+        if (this.totalGamesMined%1000 == 0) console.log('avg:' + (this.date.getTime() - this.started.getTime()) / (this.totalGamesMined / 1000))
 
-      this.tempGamesMined++
-      this.totalGamesMined++
-      this.reversi.mine()
-      if(this.reversi.symmetrical) {
-        if (this.reversi.RotSym) {
-          this.RotSym++
-          console.log('RotSym')
+        this.tempGamesMined++
+        this.totalGamesMined++
+        this.reversi.mine()
+        if(this.reversi.symmetrical) {
+          if (this.reversi.RotSym) {
+            this.RotSym++
+            console.log('RotSym')
+          }
+          if (this.reversi.Y0Sym) {
+            this.Y0Sym++
+            console.log('Y0Sym')
+          }
+          if (this.reversi.X0Sym) {
+            this.X0Sym++
+            console.log('X0Sym')
+          }
+          if (this.reversi.XYSym) {
+            this.XYSym++
+            console.log('XYSym')
+          }
+          if (this.reversi.XnYSym) {
+            this.XnYSym++
+            console.log('XnYSym')
+          }
+          this.totalCloversFound++
+          this.allGamesMined.push(this.tempGamesMined)
+          console.log('time: ' + (this.date.getTime() - this.lastTime))
+          this.lastTime = this.date.getTime()
+          console.log('current: ' + this.tempGamesMined)
+          console.log('average: ' + (this.totalGamesMined / this.totalCloversFound))
+          console.log('total: ' + this.totalGamesMined)
+          this.tempGamesMined = 0
+          console.log(this.reversi.movesString)
         }
-        if (this.reversi.Y0Sym) {
-          this.Y0Sym++
-          console.log('Y0Sym')
-        }
-        if (this.reversi.X0Sym) {
-          this.X0Sym++
-          console.log('X0Sym')
-        }
-        if (this.reversi.XYSym) {
-          this.XYSym++
-          console.log('XYSym')
-        }
-        if (this.reversi.XnYSym) {
-          this.XnYSym++
-          console.log('XnYSym')
-        }
-        this.totalCloversFound++
-        this.allGamesMined.push(this.tempGamesMined)
-        console.log('time: ' + (this.date.getTime() - this.lastTime))
-        this.lastTime = this.date.getTime()
-        console.log('current: ' + this.tempGamesMined)
-        console.log('average: ' + (this.totalGamesMined / this.totalCloversFound))
-        console.log('total: ' + this.totalGamesMined)
-        this.tempGamesMined = 0
-        console.log(this.reversi.movesString)
       }
-      this.mine()
-    }
+      resolve()
+    })
   }
 }
 export default new Miner()
