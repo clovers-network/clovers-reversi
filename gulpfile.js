@@ -5,7 +5,7 @@ gulp.task('default', defaultTask);
 
 function defaultTask(done) {
   // place code for your default task here
-  return gulp.src("src/reversi.js")
+  return gulp.src("src/*")
     .pipe(babel())
     .pipe(gulp.dest("lib"));
   done();

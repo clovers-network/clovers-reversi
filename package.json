@@ -4,6 +4,7 @@
   "description": "Reversi game logic for use in clovers.network",
   "main": "lib/reversi.js",
   "scripts": {
+    "build": "gulp",
     "test": "npm run test"
   },
   "repository": {

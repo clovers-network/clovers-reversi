@@ -45,6 +45,8 @@ class Reversi {
     this.byteLastMoves = ''
     this.moveKey = 0
     this.msg = ''
+
+  
   }
 
 
@@ -292,7 +294,6 @@ class Reversi {
     this.calcWinners()
     this.isSymmetrical()
   }
-
 
   getValidMoves () {
     let validMoves = []

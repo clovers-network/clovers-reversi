@@ -5,6 +5,11 @@
 npm install clovers-reversi --save
 ```
 
+## build
+```
+npm run build # or just gulp
+```
+
 ## use
 ```
 var Reversi = require('clovers-reversi')
