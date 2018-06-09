@@ -271,7 +271,7 @@ class Reversi {
     this.clearAttrs()
     let skip = false
     for (let i = 0; i < 60 && !skip; i++) {
-      let move = this.pickRandomMove()
+      let move = i == 0 ? [2, 3] : this.pickRandomMove() // first move is always C4 to prevent translation solutions
       if (move) {
         this.moves.push(move)
         this.buildMovesString()

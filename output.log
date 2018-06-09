@@ -1,2 +1,142 @@
-avg:NaN
-avg:94000
+avg:Infinity
+time: 2
+current: 1
+average: 1
+total: 1
+c4c3d3c5e6f4f5g5c6d2b5d6c2f6g4a5d1b3h6f3a4a3b4c1b1d7g6e2b2e3c7h7f7b6g3f8a6e1f2c8e8d8a2g7f1a7b8g8h8h5e7a1h4g1g2b7a8h3h1h2
+avg:118000
+time: 116
+current: 1
+average: 1
+total: 2
+c4e3f4g5f6e6f5e7g3f3e8c6f2b4f7g4c3h2b3d3b5d6d7f8h3h4g7d2g6f1c5a5d1h6e1g2g1c7d8b6a6b7a4b2h7c8a7h8c2e2a3g8a1h5h1a2b1b8a8c1
+time: 65
+current: 1
+average: 1
+total: 3
+c4e3f3c3e6e7c2d6c6c5e8f6d3f4g7b6g5g4b7b4b5b8a7h8c7f8d8f2a5a6f5g6g2a4f7g3h5d2f1c1b1e1b3d7h4h2d1h6c8b2h3a8g8h7a2e2g1a1h1a3
+time: 62
+current: 1
+average: 1
+total: 4
+c4c5e6e3b5e7f3b6b7b3c6f4f5a8d3f2f1a7e2b4d7g4h3d2a5a4f7g6g5a6g7g3c3h2c7g2g1h5e1g8a3e8c8h1b8h4f6c2b1c1a2d1h6d8f8h8d6a1h7b2
+time: 64
+current: 1
+average: 1
+total: 5
+c4e3f2b4f5c6c5d6d7e7b7b6a4c7d3g5f6b3c2b8a7a2e6b5d8g6h7c8a6f3h4b1b2f4e8g4d1h5g2e2f7h6d2h3g3g7h8f8h2f1a8a5g8e1g1a3a1c3c1h1
+time: 59
+current: 1
+average: 1
+total: 6
+c4e3f6c6f4f3e6g4b7e7f7c5g2c3b2g3h2h3g5g7e2c7h8f5b6h4g8h7d8d2d6d1f8h1d3d7c2c8e8c1b1f2b5b4g6a5h5a3g1b8a8a7f1b3e1a1a4a6a2h6
+time: 55
+current: 1
+average: 1
+total: 7
+c4c5e6f5c6d7e7d3c8e8g5b4a3d6c2a4f8g4e3a2f6b7a6d2e2d8g6b8c7b1g3b5c3a7a5f3g2f4b2h1a1f7g7e1g1h8f2h7g8h4f1b6c1d1a8h6h2h3h5b3
+time: 60
+current: 1
+average: 1
+total: 8
+c4c5d6c3f4e6b5c6e7f5b4a4g6g5c2f6h6g4a3b6a5e8e3g3g7d3b7g8c7b3d2a6f7a2h5b8h3d1h7e2c8h4h2d7f8g2a8f3a7b2f2h1h8e1f1d8g1c1b1a1
+time: 66
+current: 1
+average: 1
+total: 9
+c4c5b6b5e6a7c6f5a6f3g4e3f2h5g3g2f6b7h4b3h2e2b4d3b8f1a8g7g1e7h3g6g5a4a3d6b2h1g8f7d1d2h7b1d7a2e1c1c7c3a5h8f4d8f8c8h6e8a1c2
+time: 56
+current: 1
+average: 1
+total: 10
+c4c3d3c5f6e2d6g7b3b4e6b2a1c6a4f4b6e3g6a7d2c1f1a5h8f7a6b1e1h5h6c2d1d7f5f2e8g4h3e7b5g5a3c7h4f3d8b8g1c8b7a8g3f8h7g8g2h2h1a2
+time: 60
+current: 1
+average: 1
+total: 11
+c4c5d6e7c6e3d7b4f7b7b5b6a3e6f4g5f5a4e2f6a8d3c3c8d8f8g6a6g3c7h6a2b8g4h4h3e8f2a7f1f3b3a5h5g8g7d2c2h2g2h7h8a1h1g1e1b2c1b1d1
+time: 55
+current: 1
+average: 1
+total: 12
+c4c5f6c3b5e6c2a5d6f5c6g7a4d3a6b3a2d7e8b1f3b6e3c8c7d2d1b2b4e2d8b7g4h5g6h7f2b8g5f7f4f1e7c1f8a1h8a3a7g8a8h6g1h1h4g3g2h3e1h2
+time: 57
+current: 1
+average: 1
+total: 13
+c4e3f2c6d6e2b6c5b4c7e6b5e1a4d8f5c3d7a3f4f7b7d3f6g6g8a5b3g4h6c2c8h7h8e8a2b2f8a1c1d1a6b1h4a7f3g3h5h3h2e7b8a8d2g2f1g5g7h1g1
+time: 53
+current: 1
+average: 1
+total: 14
+c4c5d6e7b6d3f8b3e6b5e3f4g3b7a5e8f6c6b4g5c3f3a7g8f5d7g7g4h4f7b2h6f2h5a8a2h8h2c7a4g2h1h7e1g1d2e2d8a3f1d1c8a6g6a1h3b8c2b1c1
+time: 56
+current: 1
+average: 1
+total: 15
+c4c5b6e3f4g5f2d3c3f3f5d6h6g3f6f7e6c2e7d7h3h5c7g6g8b7g4b4e8h7d2h2b5e1d8c6b1b8g2c8a3a4f1b2a1h1a8b3c1g7e2f8g1h8a6d1a2a5a7h4
+time: 63
+current: 1
+average: 1
+total: 16
+c4c5e6c3b5f6g6e7e3h6e8d6g5g7d3b4g8d2c6f4d1f8c2b3h4a5a2e1b2a3c1b6e2f7f1f5b7h5h8a4d7f3c7b8h7b1a8g1f2g4g2c8d8g3h3a1a7h2h1a6
+time: 57
+current: 1
+average: 1
+total: 17
+c4e3f4g3f2b4f5e2c3c2b3a3g4f6e1h4d3c5b6e6g7d2f3c6a4a6b2f1h3a5b7d1b1a2c1f7d7b5f8e8g5g6a7c8a8h7g2h2d8d6a1g8h1h6e7c7h5g1h8b8
+time: 68
+current: 1
+average: 1
+total: 18
+c4c5b6f3d6c6e6f6e7c7g6b5g2f8d8a6a7h6f5g4g5c3g3h1b2h5g1b8f4d3h4h3b4e3d7f7d2a3g8c2b7e1a4f1f2c1a2a5b1a8e2a1h7e8g7b3h2c8d1h8
+time: 55
+current: 1
+average: 1
+total: 19
+c4c5e6c3b5c6b3a3b7e3a2b4c2d3d2d1b1f6b2c7a4f7d6b6g8b8f5e1f3f2a6d7c8g3e2g5g6f4h5h6a8a5g2h4g4f1e7h2h1e8h7d8g1c1f8g7h3a1a7h8
+time: 63
+current: 1
+average: 1
+total: 20
+c4e3f2e2f3c5d1g2e6d2c6b7c3f7g4b4h2h1d3h5b2f5b5b6g6e1f1h3g3c2a7d6a8a2a1b3g5h7e7c7b1c1g1f4a4f6h4e8f8d7h6a6a3b8c8g7d8a5g8h8
+time: 53
+current: 1
+average: 1
+total: 21
+c4e3f4g3e2e1f2c3h4h2f3g4h3c5c6g1d3d2d6f6e6c7d7f7g6e8b6g2b8c2c8e7g7d8f1f8h1h6c1b3d1b4a3g8f5b2h8h5b5a7a6g5a5b7a2b1a8h7a1a4
+time: 64
+current: 1
+average: 1
+total: 22
+c4c5d6e3f5e7f4d3b5e6d2a5d7g3h2c7c6g4d8c2f3h3b8b3g6c1f7e8f6b7a2g7e2e1g2g1c8a8f8b6h4b4g8c3a4h7d1g5h1b2a1b1f1a3h6h5a7f2a6h8
+time: 69
+current: 1
+average: 1
+total: 23
+c4e3f6e6f7c6f4c5b7g4f3f2d3c3b2a8b4d6e7b3c2g6g1d1e2e8d7c8g3a1f8a5c7h2a4g2a2d2a6d8h3a3a7b8e1h4b6c1h6f5h1h5h7g5g8h8b5f1b1g7
+time: 61
+current: 1
+average: 1
+total: 24
+c4c5c6c3c2b5f6d7b7c7a6f5e6c1f4f3b2a5e3f7e7d6b4d8g6b6c8b8a4g5g8a3b3f8h5h8a8d2e2a2a1h6e8f2g4d3e1d1g7h7b1a7g2h3g3f1h2g1h1h4
+time: 58
+current: 1
+average: 1
+total: 25
+c4e3f2e2d2c6f4f3g4g2f6e6g3h2h4b3b4d3f5g6d7a4h7g1c3e8f1d1c2g5g7b2h5e1a5d6h3g8b6c5c1a6c7b1a2b8h6e7c8d8f7a3b5f8b7h8h1a1a7a8
+time: 60
+current: 1
+average: 1
+total: 26
+c4c5b6c3c2e3f5b2a1e6d7b5d6c1f4a2f2f6g7b7b3f7a5g1d2f3g6h7g4h5g8g5h3e8d3e7d1g3h8b4e2d8h6f1c7f8c8a7h4b1a6a4c6b8e1h2g2h1a8a3
+time: 68
+current: 1
+average: 1
+total: 27
+c4c3f5c5b5f4c2e6d7b4e3d2d3b2f2g6a3e7e1e2e8a6b6f7h7f3c1b1g5a5g4d1d6g3g7h6b3a4a2c8c7a1g2b7f6f8c6h1h8g1h4d8b8a8h5h2g8h3a7f1
+time: 64
+current: 1
+average: 1
+total: 28
+c4c5d6e7f5f4c6d3f3g3e6e3h2f6f2d2f8b3c3b6g5g1f7b4c1g4a2h6g6h3h4h5e1e8a4d1e2h1c7f1h7a5b2b8a3g8a6b1c8a1d8b5c2h8g2a7d7g7b7a8

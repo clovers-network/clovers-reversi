@@ -22,7 +22,7 @@ class Miner {
 
   startMining(log) {
     if (log && log !== this.log) this.log = log
-    this.mine()
+    setInterval(this.mine.bind(this), 0)
   }
 
   mine() {
@@ -67,7 +67,7 @@ class Miner {
           fs.appendFileSync(this.log, this.reversi.movesString + '\r\n');
         }
       }
-      setTimeout(this.mine().bind(this))
+
   }
 }
 export default new Miner()
