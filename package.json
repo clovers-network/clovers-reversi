@@ -1,6 +1,6 @@
 {
   "name": "clovers-reversi",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Reversi game logic for use in clovers.network",
   "main": "lib/reversi.js",
   "scripts": {
