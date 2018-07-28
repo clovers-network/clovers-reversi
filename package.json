@@ -1,12 +1,13 @@
 {
   "name": "clovers-reversi",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Reversi game logic for use in clovers.network",
   "main": "lib/reversi.js",
   "scripts": {
     "build": "gulp",
     "test": "jest",
-    "coverage": "http-server coverage/lcov-report/"
+    "coverage": "http-server coverage/lcov-report/",
+    "pub": "npm version patch && npm publish"
   },
   "repository": {
     "type": "git",
