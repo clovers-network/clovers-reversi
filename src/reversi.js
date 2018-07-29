@@ -1,6 +1,7 @@
 import BN from "bn.js";
 class Reversi {
   constructor(startVal) {
+    this.STARTMOVE = [2, 3]; // C4
     this.BOARDDIM = 8;
     this.EMPTY = 3;
     this.BLACK = 1;
@@ -70,6 +71,7 @@ class Reversi {
       this.msg = "Invalid Game (square is already occupied)";
       return;
     }
+
     let possibleDirections = this.possibleDirections(col, row);
     if (possibleDirections.length === 0) {
       this.error = true;
@@ -286,7 +288,7 @@ class Reversi {
     this.clearAttrs();
     let skip = false;
     for (let i = 0; i < 60 && !skip; i++) {
-      let move = i == 0 ? [2, 3] : this.pickRandomMove(); // first move is always C4 to prevent translation solutions
+      let move = i == 0 ? this.STARTMOVE : this.pickRandomMove(); // first move is always C4 to prevent translation solutions
       if (move) {
         this.moves.push(move);
         this.buildMovesString();
@@ -337,6 +339,7 @@ class Reversi {
     ).map(r => {
       return r.map(t => (t === "b" ? "⬛️" : t === "w" ? "⬜️" : "❎"));
     });
+    return this.visualBoard;
   }
 
   moveToArray(moveArray) {
@@ -630,8 +633,10 @@ class Reversi {
         case "e6":
           move = [7 - move[1], 7 - move[0]];
           break;
+        case "c4":
+          break;
         default:
-          throw new Error("impossibru!!!");
+          throw new Error("impossibru!!!" + moves[0].toLowerCase());
       }
 
       move = this.arrayToMove(move[0], move[1]);
@@ -646,7 +651,7 @@ class Reversi {
   }
 
   sliceMovesStringToBytes(moves = "") {
-    return this.sliceBinaryMovesToBytes(this.stringMovesToBinaryMoves(moves));
+    return this.sliceBinaryMovesToBytes(this.vesToBinaryMoves(moves));
   }
 }
 

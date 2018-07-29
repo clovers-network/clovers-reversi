@@ -1,4 +1,4 @@
-const Reversi = require("../src/reversi").default;
+const Reversi = require("../lib/reversi").default;
 let r;
 let validC4Moves =
   "C4C5C6C3E3B5C2B2A4E2A2B3F5C7C8B6A6B1F3A7B7D6F2G2G3A5B4C1D2A3H2D1F4G5G4F1F6D8H4H3H1E1A1H5G1F7F8E7H6B8D3D7E6G6E8G8G7H7A8H8";
@@ -68,4 +68,23 @@ test("translateToC4Version", () => {
   r.playGameMovesString(validE6Moves);
   r.translateToC4Version();
   expect(r.movesString.toLowerCase()).toBe(validC4Moves.toLowerCase());
+});
+
+test("mine", () => {
+  let moves = r.stringMovesToArrayMoves(validC4Moves);
+  r.pickRandomMove = function() {
+    return r.moveToArray(moves[this.moves.length]);
+  };
+  r.mine();
+  expect(r.symmetrical).toBe(true);
+});
+
+test("mine time", () => {
+  let count = 0;
+  while (!r.symmetrical) {
+    count++;
+    r.mine();
+  }
+  console.log("mine took " + count + " tries");
+  console.log(r.movesString);
 });
