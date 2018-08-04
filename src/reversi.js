@@ -452,7 +452,7 @@ class Reversi {
       let padding = 64 * 7 - len;
       padding = new Array(padding);
       padding = padding.fill("0").join("");
-      byteBoard = binaryMoves + padding;
+      binaryMoves = binaryMoves + padding;
     }
     return [
       this.binaryMovesToByteMoves(binaryMoves.slice(0, 224)),
@@ -652,6 +652,16 @@ class Reversi {
 
   sliceMovesStringToBytes(moves = "") {
     return this.sliceBinaryMovesToBytes(this.vesToBinaryMoves(moves));
+  }
+
+  returnSymmetriesAsBN() {
+    var symmetries = new BN(0);
+    symmetries = symmetries.add(this.RotSym ? "0b10000" : 0);
+    symmetries = symmetries.add(this.Y0Sym ? "0b01000" : 0);
+    symmetries = symmetries.add(this.X0Sym ? "0b00100" : 0);
+    symmetries = symmetries.add(this.XYSym ? "0b00010" : 0);
+    symmetries = symmetries.add(this.XnYSym ? "0b00001" : 0);
+    return symmetries;
   }
 }
 

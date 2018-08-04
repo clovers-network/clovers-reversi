@@ -79,7 +79,7 @@ test("mine", () => {
   expect(r.symmetrical).toBe(true);
 });
 
-test("mine time", () => {
+test.skip("mine time", () => {
   let count = 0;
   while (!r.symmetrical) {
     count++;
