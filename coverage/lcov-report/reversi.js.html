@@ -1532,9 +1532,9 @@ Object.defineProperty(exports, "__esModule", {
 &nbsp;
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; <span class="missing-if-branch" title="else path not taken" >E</span>if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { <span class="missing-if-branch" title="else path not taken" >E</span>if (protoProps) defineProperties(Constructor.prototype, protoProps); <span class="missing-if-branch" title="if path not taken" >I</span>if (staticProps) <span class="cstat-no" title="statement not covered" >defineProperties(Constructor, staticProps); </span>return Constructor; }; }();
 &nbsp;
-var _bignumber = require('bignumber.js');
+var _bn = require('bn.js');
 &nbsp;
-var _bignumber2 = _interopRequireDefault(_bignumber);
+var _bn2 = _interopRequireDefault(_bn);
 &nbsp;
 function _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? <span class="branch-0 cbranch-no" title="branch not covered" >obj </span>: { default: obj }; }
 &nbsp;
@@ -1603,8 +1603,8 @@ var Reversi = function () {
       var moves = arguments.length &gt; 0 &amp;&amp; arguments[0] !== undefined ? arguments[0] : this.moves;
 &nbsp;
       moves = this.stringMovesToBinaryMoves(moves.join('')).match(/.{1,224}/g);
-      var foo = new _bignumber2.default(moves[0], 2);
-      var bar = new _bignumber2.default(moves[1], 2);
+      var foo = new _bn2.default(moves[0], 2);
+      var bar = new _bn2.default(moves[1], 2);
       this.byteFirst32Moves = foo.toString(16);
       this.byteLastMoves = bar.toString(16);
     }
@@ -1898,7 +1898,7 @@ var Reversi = function () {
         <span class="missing-if-branch" title="if path not taken" >I</span>if (move.length &lt; 2) <span class="cstat-no" title="statement not covered" >return;</span>
         var moveArray = move.match(/.{1,1}/g);
         var m = _this3.moveToArray(moveArray);
-        var foo = new _bignumber2.default(m[0] + m[1] * 8 + 64);
+        var foo = new _bn2.default(m[0] + m[1] * 8 + 64);
         return foo.toString(2);
       }).join('');
       <span class="missing-if-branch" title="else path not taken" >E</span>if (stringMoves.length &lt; 64 * 7) {
@@ -1995,7 +1995,7 @@ var Reversi = function () {
   }, {
     key: 'binaryBoardToByteBoard',
     value: function binaryBoardToByteBoard(binaryBoard) {
-      var foo = new _bignumber2.default(binaryBoard, 2);
+      var foo = new _bn2.default(binaryBoard, 2);
       return foo.toString(16);
     }
   }, {
@@ -2027,7 +2027,7 @@ var Reversi = function () {
 <span class="cstat-no" title="statement not covered" >      if (byteBoard.slice(0, 2) === '0x') {</span>
 <span class="cstat-no" title="statement not covered" >        byteBoard = byteBoard.slice(2);</span>
       }
-<span class="cstat-no" title="statement not covered" >      byteBoard = new _bignumber2.default(byteBoard, 16);</span>
+<span class="cstat-no" title="statement not covered" >      byteBoard = new _bn2.default(byteBoard, 16);</span>
 <span class="cstat-no" title="statement not covered" >      byteBoard = byteBoard.toString(2);</span>
       var len = <span class="cstat-no" title="statement not covered" >byteBoard.length;</span>
 <span class="cstat-no" title="statement not covered" >      if (len &lt; 128) {</span>
@@ -2147,7 +2147,7 @@ var Reversi = function () {
 <span class="cstat-no" title="statement not covered" >        byteLastMoves = byteLastMoves.slice(2);</span>
       }
       var byteMoves = <span class="cstat-no" title="statement not covered" >byteFirst32Moves + byteLastMoves;</span>
-<span class="cstat-no" title="statement not covered" >      byteMoves = new _bignumber2.default(byteMoves, 16);</span>
+<span class="cstat-no" title="statement not covered" >      byteMoves = new _bn2.default(byteMoves, 16);</span>
       var binaryMoves = <span class="cstat-no" title="statement not covered" >byteMoves.toString(2);</span>
 <span class="cstat-no" title="statement not covered" >      return this.binaryMovesToStringMoves(binaryMoves);</span>
     }
@@ -2162,7 +2162,7 @@ var Reversi = function () {
       var binaryMoves = <span class="cstat-no" title="statement not covered" >arguments.length &gt; 0 &amp;&amp; arguments[0] !== undefined ? arguments[0] : 0;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      if (!binaryMoves) <span class="cstat-no" title="statement not covered" >return;</span></span>
-      var foo = <span class="cstat-no" title="statement not covered" >new _bignumber2.default(binaryMoves, 2);</span>
+      var foo = <span class="cstat-no" title="statement not covered" >new _bn2.default(binaryMoves, 2);</span>
 <span class="cstat-no" title="statement not covered" >      return foo.toString(16);</span>
     }
   }, {
@@ -2177,7 +2177,7 @@ var Reversi = function () {
 &nbsp;
       var binaryMoves = <span class="cstat-no" title="statement not covered" >arguments.length &gt; 0 &amp;&amp; arguments[0] !== undefined ? arguments[0] : 0;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      binaryMoves = binaryMoves &amp;&amp; new _bignumber2.default(binaryMoves, 2);</span>
+<span class="cstat-no" title="statement not covered" >      binaryMoves = binaryMoves &amp;&amp; new _bn2.default(binaryMoves, 2);</span>
 <span class="cstat-no" title="statement not covered" >      binaryMoves = binaryMoves.toString(2);</span>
 <span class="cstat-no" title="statement not covered" >      if (binaryMoves.length &lt; 64 * 7) {</span>
         var padding = <span class="cstat-no" title="statement not covered" >64 * 7 - binaryMoves.length;</span>
@@ -2186,7 +2186,7 @@ var Reversi = function () {
 <span class="cstat-no" title="statement not covered" >        binaryMoves += padding;</span>
       }
 <span class="cstat-no" title="statement not covered" >      return binaryMoves.match(/.{1,7}/g).map(<span class="fstat-no" title="function not covered" >fu</span>nction (move) {</span>
-<span class="cstat-no" title="statement not covered" >        move = new _bignumber2.default(move, 2).toNumber(10);</span>
+<span class="cstat-no" title="statement not covered" >        move = new _bn2.default(move, 2).toNumber(10);</span>
 <span class="cstat-no" title="statement not covered" >        if (move &lt; 64) {</span>
 <span class="cstat-no" title="statement not covered" >          return false;</span>
         } else {
@@ -2248,9 +2248,9 @@ var Reversi = function () {
 <span class="cstat-no" title="statement not covered" >      return this.sliceBinaryMovesToBytes(this.vesToBinaryMoves(moves));</span>
     }
   }, {
-    key: 'returnSymmetriesAsBigNumber',
-    value: function <span class="fstat-no" title="function not covered" >returnSymmetriesAsBigNumber(</span>) {
-      var symmetries = <span class="cstat-no" title="statement not covered" >new _bignumber2.default(0);</span>
+    key: 'returnSymmetriesAsBN',
+    value: function <span class="fstat-no" title="function not covered" >returnSymmetriesAsBN(</span>) {
+      var symmetries = <span class="cstat-no" title="statement not covered" >new _bn2.default(0);</span>
 <span class="cstat-no" title="statement not covered" >      if (this.RotSym) <span class="cstat-no" title="statement not covered" >symmetries = symmetries.add('0b10000');</span></span>
 <span class="cstat-no" title="statement not covered" >      if (this.Y0Sym) <span class="cstat-no" title="statement not covered" >symmetries = symmetries.add('0b01000');</span></span>
 <span class="cstat-no" title="statement not covered" >      if (this.X0Sym) <span class="cstat-no" title="statement not covered" >symmetries = symmetries.add('0b00100');</span></span>
@@ -2269,7 +2269,7 @@ exports.default = Reversi;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Aug 06 2018 15:54:22 GMT+0200 (CEST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Aug 06 2018 16:49:28 GMT+0200 (CEST)
 </div>
 </div>
 <script src="prettify.js"></script>

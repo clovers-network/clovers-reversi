@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1533563662878" clover="3.2.0">
-  <project timestamp="1533563662879" name="All files">
+<coverage generated="1533566968688" clover="3.2.0">
+  <project timestamp="1533566968688" name="All files">
     <metrics statements="413" coveredstatements="246" conditionals="328" coveredconditionals="133" methods="67" coveredmethods="34" elements="808" coveredelements="413" complexity="0" loc="413" ncloc="413" packages="1" files="1" classes="1">
       <file name="reversi.js" path="/Users/billy/clovers/clovers-reversi/lib/reversi.js">
         <metrics statements="413" coveredstatements="246" conditionals="328" coveredconditionals="133" methods="67" coveredmethods="34"/>

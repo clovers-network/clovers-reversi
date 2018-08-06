@@ -1,6 +1,6 @@
 {
   "name": "clovers-reversi",
-  "version": "1.0.17",
+  "version": "1.0.16",
   "description": "Reversi game logic for use in clovers.network",
   "main": "lib/reversi.js",
   "scripts": {
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/clovers-network/clovers-reversi#readme",
   "dependencies": {
-    "bignumber.js": "^7.2.1"
+    "bn.js": "^4.11.8"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
