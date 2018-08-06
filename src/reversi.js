@@ -1,4 +1,4 @@
-import BN from 'bn.js'
+import BigNumber from 'bignumber.js'
 class Reversi {
   constructor(startVal) {
     this.STARTMOVE = [2, 3] // C4
@@ -53,8 +53,8 @@ class Reversi {
 
   thisMovesToByteMoves(moves = this.moves) {
     moves = this.stringMovesToBinaryMoves(moves.join('')).match(/.{1,224}/g)
-    let foo = new BN(moves[0], 2)
-    let bar = new BN(moves[1], 2)
+    let foo = new BigNumber(moves[0], 2)
+    let bar = new BigNumber(moves[1], 2)
     this.byteFirst32Moves = foo.toString(16)
     this.byteLastMoves = bar.toString(16)
   }
@@ -358,7 +358,7 @@ class Reversi {
         if (move.length < 2) return
         let moveArray = move.match(/.{1,1}/g)
         let m = this.moveToArray(moveArray)
-        let foo = new BN(m[0] + m[1] * 8 + 64)
+        let foo = new BigNumber(m[0] + m[1] * 8 + 64)
         return foo.toString(2)
       })
       .join('')
@@ -443,7 +443,7 @@ class Reversi {
   }
 
   binaryBoardToByteBoard(binaryBoard) {
-    let foo = new BN(binaryBoard, 2)
+    let foo = new BigNumber(binaryBoard, 2)
     return foo.toString(16)
   }
 
@@ -473,7 +473,7 @@ class Reversi {
     if (byteBoard.slice(0, 2) === '0x') {
       byteBoard = byteBoard.slice(2)
     }
-    byteBoard = new BN(byteBoard, 16)
+    byteBoard = new BigNumber(byteBoard, 16)
     byteBoard = byteBoard.toString(2)
     let len = byteBoard.length
     if (len < 128) {
@@ -572,7 +572,7 @@ class Reversi {
       byteLastMoves = byteLastMoves.slice(2)
     }
     let byteMoves = byteFirst32Moves + byteLastMoves
-    byteMoves = new BN(byteMoves, 16)
+    byteMoves = new BigNumber(byteMoves, 16)
     let binaryMoves = byteMoves.toString(2)
     return this.binaryMovesToStringMoves(binaryMoves)
   }
@@ -583,7 +583,7 @@ class Reversi {
 
   binaryMovesToByteMoves(binaryMoves = 0) {
     if (!binaryMoves) return
-    let foo = new BN(binaryMoves, 2)
+    let foo = new BigNumber(binaryMoves, 2)
     return foo.toString(16)
   }
 
@@ -594,7 +594,7 @@ class Reversi {
   }
 
   binaryMovesToStringMoves(binaryMoves = 0) {
-    binaryMoves = binaryMoves && new BN(binaryMoves, 2)
+    binaryMoves = binaryMoves && new BigNumber(binaryMoves, 2)
     binaryMoves = binaryMoves.toString(2)
     if (binaryMoves.length < 64 * 7) {
       let padding = 64 * 7 - binaryMoves.length
@@ -605,7 +605,7 @@ class Reversi {
     return binaryMoves
       .match(/.{1,7}/g)
       .map(move => {
-        move = new BN(move, 2).toNumber(10)
+        move = new BigNumber(move, 2).toNumber(10)
         if (move < 64) {
           return false
         } else {
@@ -659,8 +659,8 @@ class Reversi {
     return this.sliceBinaryMovesToBytes(this.vesToBinaryMoves(moves))
   }
 
-  returnSymmetriesAsBN() {
-    var symmetries = new BN(0)
+  returnSymmetriesAsBigNumber() {
+    var symmetries = new BigNumber(0)
     if (this.RotSym) symmetries = symmetries.add('0b10000')
     if (this.Y0Sym) symmetries = symmetries.add('0b01000')
     if (this.X0Sym) symmetries = symmetries.add('0b00100')
