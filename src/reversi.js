@@ -571,7 +571,7 @@ class Reversi {
     if (byteLastMoves.slice(0, 2) === '0x') {
       byteLastMoves = byteLastMoves.slice(2)
     }
-    let byteMoves = byteFirst32Moves + byteLastMoves
+    let byteMoves = byteFirst32Moves + '' + byteLastMoves
     byteMoves = new BN(byteMoves, 16)
     let binaryMoves = byteMoves.toString(2)
     return this.binaryMovesToStringMoves(binaryMoves)
@@ -656,18 +656,142 @@ class Reversi {
   }
 
   sliceMovesStringToBytes(moves = '') {
-    return this.sliceBinaryMovesToBytes(this.vesToBinaryMoves(moves))
+    return this.sliceBinaryMovesToBytes(this.stringMovesToBinaryMoves(moves))
   }
 
   returnSymmetriesAsBN() {
     var symmetries = new BN(0)
-    if (this.RotSym) symmetries = symmetries.add('0b10000')
-    if (this.Y0Sym) symmetries = symmetries.add('0b01000')
-    if (this.X0Sym) symmetries = symmetries.add('0b00100')
-    if (this.XYSym) symmetries = symmetries.add('0b00010')
-    if (this.XnYSym) symmetries = symmetries.add('0b00001')
+    if (this.RotSym) symmetries = symmetries.add(new BN(parseInt('10000',2)))
+    if (this.Y0Sym) symmetries = symmetries.add(new BN(parseInt('01000',2)))
+    if (this.X0Sym) symmetries = symmetries.add(new BN(parseInt('00100',2)))
+    if (this.XYSym) symmetries = symmetries.add(new BN(parseInt('00010',2)))
+    if (this.XnYSym) symmetries = symmetries.add(new BN(parseInt('00001',2)))
+    
     return symmetries
   }
+
+
+  toSVG(id = this.byteBoard, size = 400) {
+  size = parseInt(size)
+  return new Promise((resolve, reject) => {
+    let green = '#01B463'
+    let black = '#000000'
+    let white = '#FFFFFF'
+    let grey = '#808080'
+    // let svgPath = path.resolve(
+    //   __dirname + '/../../public/svg/' + size + '/' + id + '.svg'
+    // )
+
+    if (id !== this.byteBoard && id !== "0x" + this.byteBoard) {
+      this.byteBoardPopulateBoard(id)
+      this.calcWinners()
+      this.isSymmetrical()
+    }
+
+    let fill, stroke, sequence
+    let strokeWidth = 4
+    let radius = size / 2
+
+    let svg =
+      '<?xml version="1.0" encoding="UTF-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="' +
+      size +
+      'px" height="' +
+      size +
+      'px" viewBox="-10 -10 ' +
+      (size + 20) +
+      ' ' +
+      (size + 20) +
+      '" enable-background="new 0 0 ' +
+      size +
+      ' ' +
+      size +
+      '" xml:space="preserve" >'
+
+    if (this.whiteScore < this.blackScore) {
+      fill = black
+      stroke = black
+    } else if (this.whiteScore > this.blackScore) {
+      fill = white
+      stroke = white
+    } else {
+      fill = grey
+      stroke = grey
+    }
+    // if (this.symmetrical) {
+    //   strokeWidth = 2
+    //   stroke = green
+    // }
+
+    var notFill = fill === white ? black : white;
+
+    svg += `<rect x="-11" y="-11" width="${size + 22}" height="${size + 22}" fill="${notFill}"/>`
+
+    svg +=
+      '<circle shape-rendering="optimizeQuality" fill="' +
+      fill +
+      '" stroke="' +
+      stroke +
+      '" stroke-width="' +
+      strokeWidth +
+      '" stroke-miterlimit="10" cx="' +
+      size / 2 +
+      '" cy="' +
+      size / 2 +
+      '" r="' +
+      radius +
+      '"/>'
+    for (let i = 0; i < 64; i++) {
+      let row = Math.floor(i / 8)
+      let col = i % 8
+      switch (this.board[row][col]) {
+        case this.BLACK:
+          if (this.whiteScore < this.blackScore) continue
+          fill = black
+          stroke = 'none'
+          break
+        case this.WHITE:
+          if (this.whiteScore > this.blackScore) continue
+          fill = white
+          stroke = 'none'
+          break
+        case this.EMPTY:
+          fill = green
+          stroke = 'none'
+          break
+        default:
+          continue
+      }
+      let x = (row + 1) * (size / 12) + size / 8
+      let y = (col + 1) * (size / 12) + size / 8
+      svg +=
+        '<circle shape-rendering="optimizeQuality" fill="' +
+        fill +
+        '" stroke="' +
+        stroke +
+        '" stroke-miterlimit="1" cx="' +
+        x +
+        '" cy="' +
+        y +
+        '" r="' +
+        size / 24 +
+        '"/>'
+    }
+    svg += '</svg>'
+    resolve(svg)
+
+    // fs.outputFile(svgPath, svg, (err) => {
+    //   if (err) {
+    //     reject(err)
+    //   } else {
+    //     resolve()
+    //   }
+    // })
+  })
 }
+
+
+}
+
+
 
 export default Reversi
