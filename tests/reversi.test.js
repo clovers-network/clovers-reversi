@@ -28,20 +28,34 @@ beforeEach(() => {
   r = new Reversi();
 });
 
-test("thisMovesToByteMoves", () => {
+test('mine clean up', () => {
+  r.mine()
+  console.log('r.movesString', r.movesString)
+  let moves = r.returnByteMoves()
+  r.playGameMovesString(r.movesString)
+  let moves2 = r.returnByteMoves()
+  expect(moves.join("")).toBe(moves2.join(""))
+})
+
+test.skip("thisMovesToByteMoves", () => {
+  r.playGameMovesString(validC4Moves)
+  var byteMoves = r.returnByteMoves()
+  expect(byteMoves[0]).toBe(validC4First32BytesMoves);
+  expect(byteMoves[1]).toBe(validC4Last32BytesMoves);
+
   r.thisMovesToByteMoves(r.stringMovesToArrayMoves(validC4Moves));
   expect(r.byteFirst32Moves).toBe(validC4First32BytesMoves);
   expect(r.byteLastMoves).toBe(validC4Last32BytesMoves);
 });
 
-test("thisBoardToByteBoard", () => {
+test.skip("thisBoardToByteBoard", () => {
   r.playGameMovesString(validC4Moves);
   let board = r.board;
   r.thisBoardToByteBoard();
   expect(r.byteBoard).toBe(validC4ByteBoard);
 });
 
-test("makeMove", () => {
+test.skip("makeMove", () => {
   let playerBefore = r.currentPlayer;
   expect(playerBefore).toBe(r.BLACK);
 
@@ -56,7 +70,7 @@ test("makeMove", () => {
   expect(playerAfter).toBe(r.WHITE);
 });
 
-test("translateToC4Version", () => {
+test.skip("translateToC4Version", () => {
   r.playGameMovesString(validF5Moves);
   r.translateToC4Version();
   expect(r.movesString.toLowerCase()).toBe(validC4Moves.toLowerCase());
@@ -70,7 +84,7 @@ test("translateToC4Version", () => {
   expect(r.movesString.toLowerCase()).toBe(validC4Moves.toLowerCase());
 });
 
-test("mine", () => {
+test.skip("mine", () => {
   let moves = r.stringMovesToArrayMoves(validC4Moves);
   r.pickRandomMove = function() {
     return r.moveToArray(moves[this.moves.length]);

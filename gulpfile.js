@@ -7,7 +7,11 @@ gulp.task("default", defaultTask);
 function defaultTask(done) {
   // place code for your default task here
   return watch("src/*", { ignoreInitial: false })
-    .pipe(babel())
+    .pipe(babel({
+      "presets": [ "es2015" ]
+    }))
     .pipe(gulp.dest("lib"));
   done();
 }
+
+

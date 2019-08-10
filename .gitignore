@@ -1,2 +1,11 @@
 .DS_Store
 node_modules
+tmp
+tests
+svgs
+stickers
+final
+symms.json
+1500.pdf
+symms2.json
+

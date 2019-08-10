@@ -64,17 +64,14 @@ class Miner {
           }).catch(() => {
             console.log(reversi)
 
-            console.log(`clover ${reversi.byteBoard} doesn't exists`)
-            console.log(`clover ${reversi.movesString}`)
-            console.log(`clover ${reversi.returnByteMoves()}`)
-
-            let moves = reversi.returnByteMoves().map(m => '0x' + padRight(m, 56))
+            let moves = reversi.returnByteMoves()
+            moves = moves.map(m => '0x' + padRight(m, 56))
             let _tokenId = '0x' + reversi.byteBoard
             let _symmetries = reversi.returnSymmetriesAsBN().toString(10)
             let _keep = false
             console.log({moves, _tokenId, _symmetries, _keep})
 
-            // let txPromise = this.contract.claimClover(moves, _tokenId, _symmetries, _keep)
+            let txPromise = this.contract.claimClover(moves, _tokenId, _symmetries, _keep)
             fs.appendFileSync(this.symms, "\"" + reversi.movesString + "\",\n")
             txPromise.then((tx) => {
               console.log(tx)

@@ -291,7 +291,6 @@ class Reversi {
       let move = i == 0 ? this.STARTMOVE : this.pickRandomMove() // first move is always C4 to prevent translation solutions
       if (move) {
         this.moves.push(move)
-        this.buildMovesString()
         this.moveKey++
         this.makeMove(move)
         if (this.error) {
@@ -307,6 +306,8 @@ class Reversi {
         skip = true
       }
     }
+    this.buildMovesString()
+    this.moves = this.movesString.match(/.{1,2}/g);
     this.thisBoardToByteBoard()
     this.isComplete()
     this.calcWinners()
