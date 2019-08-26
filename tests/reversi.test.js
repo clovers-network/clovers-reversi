@@ -18,6 +18,8 @@ let validC4board = [
   [1, 1, 1, 1, 1, 1, 1, 1]
 ];
 
+let invalidC4Moves = "C4E3F3F6C5F4E6F5D6D3C6C3"
+
 let validF5Moves =
   "F5F4F3F6D6G4F7G7H5D7H7G6C4F2F1G3H3G8C6H2G2E3C7B7B6H4G5F8E7H6A7E8C5B4B5C8C3E1A5A6A8D8H8A4B8C2C1D2A3G1E6E2D3B3D1B1B2A2H1A1";
 let validD3Moves =
@@ -27,6 +29,11 @@ let validE6Moves =
 beforeEach(() => {
   r = new Reversi();
 });
+
+test("invalid c4 moves", () => {
+  r.playGameMovesString(invalidC4Moves)
+  expect(!!r.error).toBe(true)
+})
 
 test("thisMovesToByteMoves", () => {
   r.thisMovesToByteMoves(r.stringMovesToArrayMoves(validC4Moves));
@@ -79,12 +86,12 @@ test("mine", () => {
   expect(r.symmetrical).toBe(true);
 });
 
-test.skip("mine time", () => {
-  let count = 0;
-  while (!r.symmetrical) {
-    count++;
-    r.mine();
-  }
-  console.log("mine took " + count + " tries");
-  console.log(r.movesString);
-});
+// test("mine time", () => {
+//   let count = 0;
+//   while (!r.symmetrical) {
+//     count++;
+//     r.mine();
+//   }
+//   console.log("mine took " + count + " tries");
+//   console.log(r.movesString);
+// });

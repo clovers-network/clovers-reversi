@@ -391,12 +391,19 @@ class Reversi {
     this.movesString += move
     let skip = false
     this.moveKey++
-    this.makeMove(this.moveToArray(move))
+    let validMoves = this.getValidMoves()
+    let moveArray = this.moveToArray(move)
+    let contained = validMoves.findIndex((m) => m[0] === moveArray[0] && m[1] === moveArray[1])
+    if (contained < 0 && validMoves.length > 0) {
+      this.error = 'invalid move'
+      return true
+    }
+    this.makeMove(moveArray)
     if (this.error) {
       this.error = false
       this.currentPlayer =
         this.currentPlayer === this.BLACK ? this.WHITE : this.BLACK
-      this.makeMove(this.moveToArray(move))
+      this.makeMove(moveArray)
       if (this.error) {
         skip = true
       }
