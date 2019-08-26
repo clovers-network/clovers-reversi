@@ -667,13 +667,19 @@ class Reversi {
   }
 
   returnSymmetriesAsBN() {
-    var symmetries = new BN(0)
-    if (this.RotSym) symmetries = symmetries.add('0b10000')
-    if (this.Y0Sym) symmetries = symmetries.add('0b01000')
-    if (this.X0Sym) symmetries = symmetries.add('0b00100')
-    if (this.XYSym) symmetries = symmetries.add('0b00010')
-    if (this.XnYSym) symmetries = symmetries.add('0b00001')
-    return symmetries
+    var symmetries = 0
+    console.log({symmetries})
+    if (this.RotSym) symmetries += 0b10000
+    console.log({symmetries})
+    if (this.Y0Sym) symmetries += 0b01000
+    console.log({symmetries})
+    if (this.X0Sym) symmetries += 0b00100
+    console.log({symmetries})
+    if (this.XYSym) symmetries += 0b00010
+    console.log({symmetries})
+    if (this.XnYSym) symmetries += 0b00001
+    console.log({symmetries})
+    return new BN(symmetries)
   }
 }
 

@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">61.73% </span>
+        <span class="strong">60.92% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>279/452</span>
+        <span class='fraction'>279/458</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">44.01% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>36/68</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">63.57% </span>
+        <span class="strong">62.68% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>267/420</span>
+        <span class='fraction'>267/426</span>
       </div>
     </div>
     <p class="quiet">
@@ -794,7 +794,13 @@
 <a name='L746'></a><a href='#L746'>746</a>
 <a name='L747'></a><a href='#L747'>747</a>
 <a name='L748'></a><a href='#L748'>748</a>
-<a name='L749'></a><a href='#L749'>749</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L749'></a><a href='#L749'>749</a>
+<a name='L750'></a><a href='#L750'>750</a>
+<a name='L751'></a><a href='#L751'>751</a>
+<a name='L752'></a><a href='#L752'>752</a>
+<a name='L753'></a><a href='#L753'>753</a>
+<a name='L754'></a><a href='#L754'>754</a>
+<a name='L755'></a><a href='#L755'>755</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1529,6 +1535,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -2277,13 +2289,19 @@ var Reversi = function () {
   }, {
     key: 'returnSymmetriesAsBN',
     value: function <span class="fstat-no" title="function not covered" >returnSymmetriesAsBN(</span>) {
-      var symmetries = <span class="cstat-no" title="statement not covered" >new _bn2.default(0);</span>
-<span class="cstat-no" title="statement not covered" >      if (this.RotSym) <span class="cstat-no" title="statement not covered" >symmetries = symmetries.add('0b10000');</span></span>
-<span class="cstat-no" title="statement not covered" >      if (this.Y0Sym) <span class="cstat-no" title="statement not covered" >symmetries = symmetries.add('0b01000');</span></span>
-<span class="cstat-no" title="statement not covered" >      if (this.X0Sym) <span class="cstat-no" title="statement not covered" >symmetries = symmetries.add('0b00100');</span></span>
-<span class="cstat-no" title="statement not covered" >      if (this.XYSym) <span class="cstat-no" title="statement not covered" >symmetries = symmetries.add('0b00010');</span></span>
-<span class="cstat-no" title="statement not covered" >      if (this.XnYSym) <span class="cstat-no" title="statement not covered" >symmetries = symmetries.add('0b00001');</span></span>
-<span class="cstat-no" title="statement not covered" >      return symmetries;</span>
+      var symmetries = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >      console.log({ symmetries: symmetries });</span>
+<span class="cstat-no" title="statement not covered" >      if (this.RotSym) <span class="cstat-no" title="statement not covered" >symmetries += 16;</span></span>
+<span class="cstat-no" title="statement not covered" >      console.log({ symmetries: symmetries });</span>
+<span class="cstat-no" title="statement not covered" >      if (this.Y0Sym) <span class="cstat-no" title="statement not covered" >symmetries += 8;</span></span>
+<span class="cstat-no" title="statement not covered" >      console.log({ symmetries: symmetries });</span>
+<span class="cstat-no" title="statement not covered" >      if (this.X0Sym) <span class="cstat-no" title="statement not covered" >symmetries += 4;</span></span>
+<span class="cstat-no" title="statement not covered" >      console.log({ symmetries: symmetries });</span>
+<span class="cstat-no" title="statement not covered" >      if (this.XYSym) <span class="cstat-no" title="statement not covered" >symmetries += 2;</span></span>
+<span class="cstat-no" title="statement not covered" >      console.log({ symmetries: symmetries });</span>
+<span class="cstat-no" title="statement not covered" >      if (this.XnYSym) <span class="cstat-no" title="statement not covered" >symmetries += 1;</span></span>
+<span class="cstat-no" title="statement not covered" >      console.log({ symmetries: symmetries });</span>
+<span class="cstat-no" title="statement not covered" >      return new _bn2.default(symmetries);</span>
     }
   }]);
 &nbsp;
@@ -2296,7 +2314,7 @@ exports.default = Reversi;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Aug 26 2019 11:39:15 GMT+0200 (Central European Summer Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Aug 26 2019 12:21:18 GMT+0200 (Central European Summer Time)
 </div>
 </div>
 <script src="prettify.js"></script>

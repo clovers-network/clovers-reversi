@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1566812355111" clover="3.2.0">
-  <project timestamp="1566812355112" name="All files">
-    <metrics statements="420" coveredstatements="267" conditionals="334" coveredconditionals="147" methods="68" coveredmethods="36" elements="822" coveredelements="450" complexity="0" loc="420" ncloc="420" packages="1" files="1" classes="1">
+<coverage generated="1566814878817" clover="3.2.0">
+  <project timestamp="1566814878817" name="All files">
+    <metrics statements="426" coveredstatements="267" conditionals="334" coveredconditionals="147" methods="68" coveredmethods="36" elements="828" coveredelements="450" complexity="0" loc="426" ncloc="426" packages="1" files="1" classes="1">
       <file name="reversi.js" path="/home/billy/GitHub.com/clovers-network/clovers-reversi/lib/reversi.js">
-        <metrics statements="420" coveredstatements="267" conditionals="334" coveredconditionals="147" methods="68" coveredmethods="36"/>
+        <metrics statements="426" coveredstatements="267" conditionals="334" coveredconditionals="147" methods="68" coveredmethods="36"/>
         <line num="3" count="1" type="stmt"/>
         <line num="7" count="44" type="cond" truecount="5" falsecount="3"/>
         <line num="9" count="1" type="stmt"/>
@@ -416,14 +416,20 @@
         <line num="729" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="731" count="0" type="stmt"/>
         <line num="736" count="0" type="stmt"/>
-        <line num="737" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="737" count="0" type="stmt"/>
         <line num="738" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="739" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="739" count="0" type="stmt"/>
         <line num="740" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="741" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="742" count="0" type="stmt"/>
-        <line num="746" count="1" type="stmt"/>
-        <line num="749" count="1" type="stmt"/>
+        <line num="741" count="0" type="stmt"/>
+        <line num="742" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="743" count="0" type="stmt"/>
+        <line num="744" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="745" count="0" type="stmt"/>
+        <line num="746" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="747" count="0" type="stmt"/>
+        <line num="748" count="0" type="stmt"/>
+        <line num="752" count="1" type="stmt"/>
+        <line num="755" count="1" type="stmt"/>
       </file>
     </metrics>
   </project>
